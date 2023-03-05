@@ -15,8 +15,7 @@ const contactoSchema = new Schema({
    email: {
       type: String,
       lowercase: true,
-      required: true,
-      unique: true
+      required: true
    },
    mensaje: {
       type: String,

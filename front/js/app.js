@@ -401,7 +401,7 @@ if (urlActual == `${url}/front/contacto.html`) {
                               })
                            })
                         }
-                        if(response.auth == true) {
+                        if(response.enviado == true) {
                            return location.href = `${url}/front/contacto.html`;
                         }
                      })

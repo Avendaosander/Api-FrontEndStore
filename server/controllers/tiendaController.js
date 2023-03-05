@@ -43,7 +43,7 @@ const crearContacto = async(req, res) => {
       const contacto = new Contacto({nombre, apellido, email, mensaje});
       // console.log(contacto);
       await contacto.save();
-      res.status(200).send({auth: true});
+      res.status(200).send({enviado: true});
    } catch (error) {
       req.flash("mensajes", errors.array());
       res.status(404).send({"mensajes": req.flash('mensajes')})
