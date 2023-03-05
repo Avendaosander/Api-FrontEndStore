@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>FrontEnd Store</title>
+
+   <!------------------------------------------------------------------------>
+   <link rel="preload" href="css/normalize.css" as="style">
+   <link rel="stylesheet" href="css/normalize.css">
+   <!------------------------------------------------------------------------>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
+   <!------------------------------------------------------------------------>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <!------------------------------------------------------------------------>
+   <link rel="icon" type="image/favicon.ico" href="img/favicon.ico"/>
+   <!------------------------------------------------------------------------>
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+   <header>
+      <a href="index.html">
+         <h1 class="titulo">FrontEnd Store</h1>
+      </a>
+   </header>
+   <nav>
+      <ul>
+         <li>
+            <i class="fa-solid fa-shop"></i>
+            <a class="nav_enlace" id="tienda" href="index.html">Tienda</a>
+         </li>
+         <li>
+            <i class="fa-solid fa-users"></i>
+            <a class="nav_enlace" id="nosotros" href="nosotros.html">Nosotros</a>
+         </li>
+         <li>
+            <i class="fa-solid fa-envelope"></i>
+            <a class="nav_enlace" id="contacto" href="contacto.html">Contacto</a>
+         </li>
+         <li>
+            <i class="fa-sharp fa-solid fa-right-from-bracket"></i>
+            <a class="nav_enlace" id="logout" href="#">Salir</a>
+         </li>
+      </ul>
+   </nav>
+   
+   <main class="contenedor">
+
+      <h1>Sobre Nosotros</h1>
+   
+      <section class="grid-nosotros">
+         <article class="nosotros-texto">
+               <p>Somos una compañia que se encarga de distribuir las mejores franelas de tus lenguajes de programacion y frameworks preferidos, con la mejor calidad y la mejor atencion, contamos con una gran variedad en los colores y tallas, rapidez y seguridad en los envios.</p>
+               <p>Siempre quisiste tener una franela con el logo o nombre del lenguaje o framework que utilizas dia a dia? Bueno, ahora te lo tenemos, con envio nacional y los mejores precios del pais.</p>
+               <p>Que esperas para comprar con nosotros? Hazlo ya!</p>
+         </article>
+         <img class="nosotros-img" src="img/nosotros.jpg" alt="">
+      </section>
+   
+      <section class="contenedor">
+         <h2 >¿Por qué comprar con nosotros?</h2>
+         
+         <div class="bloques">
+            <article class="bloque">
+               <img class="bloque-imagen" src="img/icono_1.png" alt="Por qué comprar">
+               <h3 class="bloque_titulo">El mejor precio</h3>
+               <p>Contamos con los mejores precios de la ciudad y de la mayoria del pais, no esperes mas y compra tu franela de programador.</p>
+            </article> <!--Bloque-->
+            <article class="bloque">
+               <img class="bloque-imagen" src="img/icono_2.png" alt="Por qué comprar">
+               <h3 class="bloque_titulo">Para Devs</h3>
+               <p>Javascript, VueJS, ReactJS y/o entre otros lenguajes y frameworks ta han hecho un gran programador? ¿Por que no usar una franela usando su logo? Adquierela ya en nuestro sitio web.</p>
+            </article> <!--Bloque-->
+            <article class="bloque">
+               <img class="bloque-imagen" src="img/icono_3.png" alt="Por qué comprar">
+               <h3 class="bloque_titulo">Envío Gratis</h3>
+               <p>Contamos con promociones eventuales de envios gratis a nivel nacional, atento a nuestras redes sociales para que no te pierdas estas promociones.</p>
+            </article> <!--Bloque-->
+            <article class="bloque">
+               <img class="bloque-imagen" src="img/icono_4.png" alt="Por qué comprar">
+               <h3 class="bloque_titulo">La Mejor Cálidad</h3>
+               <p>Nuestros productos son de la mejor calidad, la mejor tela, no pierden color, las manchas suelen salir con facilidad, no se cae su logo, no esperes mas y compra tu franela.</p>
+            </article> <!--Bloque-->
+         </div>
+      </section>
+   </main>
+     
+  <footer>
+      <p class="footer_parrafo">Front End Store - Todos los derechos reservados, Alexander</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

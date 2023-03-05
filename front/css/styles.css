@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root{
+   --blanco: #fff;
+   --secundario: #ffce00;
+   --secundarioOscuro: rgb(233, 187,2);
+}
+html{
+   box-sizing: border-box;
+   /* font-size: 62.5%; */
+}
+*{
+   margin: 0px;
+   padding: 0px;
+}
+*, *:before, *:after {
+   box-sizing: inherit;
+ }
+ /* GLOBALES */
+body{
+   font-family: 'Open Sans', sans-serif;
+   background: rgb(10,19,93);
+   background: linear-gradient(90deg, rgba(10,19,93,1) 0%, rgba(77,116,228,1) 50%, rgba(4,90,107,1) 100%);
+   font-size: 25px;
+   line-height: 1.5;
+
+}
+a{
+   text-decoration: none;
+}
+p{
+   font-size: 20px;
+   font-family: 'Open Sans', sans-serif;
+   color: var(--blanco);
+}
+img{
+   width: 100%;
+}
+.contenedor{
+   max-width: 1300px;
+   margin: 0 auto;
+}
+h1, h2, h3{
+   text-align: center;
+   color: var(--secundario);
+}
+h1{
+   font-size: 45px;
+}
+h2{
+   font-size: 35px;
+}
+h3{
+   font-size: 30px;
+}
+
+/* HEADER */
+header{
+   display: flex;
+   text-align: center;
+   justify-content: center;
+}
+.titulo{
+   font-size: 60px;
+   font-weight: 700;
+   color: rgb(231, 218, 36);
+   margin: 15px 0;
+}
+
+/* NAVEGACIÓN */
+nav{
+   background: rgba(28, 16, 71, 0.521);
+   padding: 16px 0;
+}
+ul{
+   display: flex;
+   flex-direction: column;
+   gap: 48px;
+}
+li{
+   display: flex;
+   list-style-type: none;
+   align-items: center;
+   justify-content: center;
+   gap: 12px;
+}
+li i{
+   color: #fff;
+   width: 24px;
+   /* margin-right: 8px; */
+}
+.svg{
+   color: #fff;
+   line-height: 0.9;
+}
+.nav_enlace{
+   font-weight: 700;
+   font-size: 25px;
+   color: var(--blanco);
+}
+.nav_enlace-activo{
+   color: var(--secundario);
+}
+.nav_enlace:hover{
+   color: var(--secundario);
+}
+@media (min-width: 768px){
+   ul{
+      flex-direction: row;
+      justify-content: center;
+   }
+   li:last-child{
+      position: absolute;
+      right: 30px;
+   }
+}
+
+@media (max-width: 800px){
+   li:last-child{
+      position: relative;
+   }
+}
+
+/* TIENDA */
+/* GRID */
+.grid{
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   gap: 32px;
+}
+@media (min-width: 768px){
+   .grid{
+       grid-template-columns: repeat(3,1fr);
+   }
+}
+/* PRODUCTOS */
+.producto{
+   background: rgba(28, 16, 71, 0.521);
+   border-radius: 19px;
+   padding: 5px;
+}
+.producto_imagen{
+   border-radius: 15px;
+   width: 100%;
+}
+.producto_nombre{
+   color: white;
+   margin:1px 0;
+   text-align: center;
+   font-size: 22px;
+}
+.producto_precio{
+   margin:8px 0;
+   text-align: center;
+   font-size: 15px;
+   line-height: 1.2;
+   color: var(--secundario);
+}
+/* GRAFICOS */
+.grafico{
+   min-height: 384px;
+   background-repeat: no-repeat;
+   background-size: cover;
+   grid-column: 1 / 3;
+}
+.grafico-camisas{
+   grid-row: 2 / 3;
+   background-image: url(../img/grafico1.jpg);
+   border-radius: 19px;
+}
+.grafico-node{
+   background-image: url(../img/grafico2.jpg);
+   border-radius: 19px;
+   grid-row: 8 / 9;
+}
+@media (min-width: 768px){
+   .grafico{
+       height: 100%;
+   }
+   .grafico-node{
+       grid-row: 5 / 6;
+       grid-column: 2 / 4;
+   }
+}
+
+/* NOSOTROS */
+/* GRID */
+.grid-nosotros{
+   display: grid;
+   grid-template-rows: repeat(1,1fr);
+   gap: 32px;
+}
+@media (min-width: 768px){
+   .grid-nosotros{
+       grid-template-columns: repeat(2,1fr);
+       column-gap: 32px;
+   }
+   .nosotros-img{
+       grid-column: 2 / 3;
+       /* width: 100%; */
+   }
+}
+.nosotros-img{
+   width: 100%;
+   grid-row: 1 / 2;
+}
+.nosotros-texto p{
+   font-size: 27px;
+}
+
+/* BLOQUES NOSOTROS*/
+.bloques{
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 32px;
+}
+.bloque{
+   text-align: center;
+}
+.bloque_titulo{
+   margin: 0;
+}
+.bloque_imagen{
+   width: 100%;
+}
+.bloque p{
+   font-size: 21px;
+}
+@media (min-width:768px){
+   .bloques{
+       grid-template-columns: repeat(4,1fr);
+   }
+}
+
+/* PRODUCTO */
+.camisa img{
+   border-radius: 15px;
+}
+@media (min-width:768px){
+   .camisa{
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       column-gap: 32px;
+   }
+}
+.precio{
+   display: flex;
+   justify-content: flex-end;
+   margin-top: 20px;
+}
+#total{
+   display: flex;
+   justify-content: flex-end;
+}
+.formulario{
+   margin-top: 15px;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 25px;
+}
+.formulario_campo{
+   border:5px solid rgba(64, 36, 167, 0.815);
+   background-color: transparent;
+   color: var(--secundario);
+   font-size: 25px;
+   padding: 10px;
+   appearance: none;
+}
+.formulario_submit{
+   background-color: var(--secundario);
+   border: none;
+   font-size: 25px;
+   font-weight: 700;
+   padding: 10px;
+   transition: background-color .5s ease;
+   grid-column: 1 / 3;
+}
+.formulario_submit:hover{
+   background-color: var(--secundarioOscuro);
+   cursor: pointer;
+}
+
+/* CONTACTO */
+.m-top{
+   margin-top: 20px;
+}
+.form-contacto{
+   
+   background: rgba(28, 16, 71, 0.521);
+   width: min(800px, 100%);
+   margin: 0 auto;
+   padding: 15px;
+   border-radius: 15px;
+}
+.form-contacto fieldset{
+   border: none;
+}
+.form-contacto legend{
+   color: var(--secundarioOscuro);
+   text-align: center;
+   text-transform: uppercase;
+   font-weight: bold;
+   font-size: 25px;
+   margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+   .grid-form{
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       grid-template-rows: auto auto 200px;
+       column-gap: 1rem;
+   }
+   .campo:nth-child(3), .campo:nth-child(4){
+       grid-column: 1 / 3;
+   }
+}
+
+.campo{
+   margin-bottom: 15px;
+}
+.campo label {
+   color: white;
+   font-size: 20px;
+   font-weight: bold;
+   margin-bottom: 5px;
+   display: block;
+}
+.campo textarea{
+   height: 200px;
+}
+.input-text{
+   width: 100%;
+   border: none;
+   font-size: 15px;
+   padding: 10px;
+   border-radius: 7px;
+}
+.alinear-derecha{
+   display: flex;
+   justify-content: flex-end;
+}
+.boton{
+   background: var(--secundarioOscuro);
+   color: #000;
+   text-transform: uppercase;
+   font-size: 20px;
+   font-weight: bold;
+   padding: 5px 30px;
+   width: auto;
+   margin-top: 45px;
+   border-radius: 7px;
+   text-align: center;
+   border: none;
+}
+
+/* FOOTER */
+footer{
+   background: rgba(28, 16, 71, 0.521);
+   padding: 10px 0;
+   margin-top: 25px;
+}
+.footer_parrafo{
+   text-align: center;
+   font-size: 15px;
+   font-weight: bold;
+}
+@media (min-width: 768px) {
+   .footer_parrafo{
+      font-size: 20px;
+   }
+}
+
+/* LOGIN & REGISTER*/
+.contenedorAuth{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   min-height: 100vh;
+}
+.contenedorAuth footer{
+   background: rgba(34, 50, 67, 0.6);
+   width: 100%;
+}
+
+.container{
+   padding: 40px;
+   border-radius: 20px;
+   border: 8px solid #223243;
+   box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35), inset -5px -5px 15px rgba(255, 255, 255, 0.1), inset 5px 5px 15px rgba(0, 0, 0, 0.35);
+}
+.cont-register{
+   margin-top: 70px;
+}
+.cont-login{
+   margin-top: 140px;
+}
+
+.form{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   flex-direction: column;
+   gap: 30px;
+}
+
+.signinForm .form.signin{
+   display: flex;
+}
+
+.form h2{
+   color: #fff;
+   font-weight: 800;
+   font-size: 40px;
+   letter-spacing: 0.1em;
+   margin: 10px 0;
+}
+
+.inputBox{
+   position: relative;
+   width: 400px;
+}
+
+.inputBox input{
+   padding: 12px 10px 12px 50px;
+   border: none;
+   width: 100%;
+   background: #223243;
+   border: 1px solid rgba(0, 0, 0, 0.1);
+   color: #fff;
+   font-weight: 400;
+   border-radius: 25px;
+   font-size: 15px;
+   box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35);
+   transition: 0.5s;
+   outline: none;
+}
+
+.inputBox span{
+   position: absolute;
+   left: 0;
+   padding: 8px 19px 13px 55px;
+   pointer-events: none;
+   font-size: 20px;
+   font-weight: 300;
+   transition: 0.5s;
+   letter-spacing: 0.05em;
+   color: rgba(255, 255, 255, 0.5);
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span{
+   color: #00dfc4;
+   border: 1px solid #00dfc4;
+   background: #223243;
+   transform: translateX(25px) translateY(-7px);
+   font-size: 10px;
+   padding: 0 8px;
+   border-radius: 10px;
+   letter-spacing: 0.1em;
+   -webkit-transform: translateX(25px) translateY(-7px);
+   -moz-transform: translateX(25px) translateY(-7px);
+   -ms-transform: translateX(25px) translateY(-7px);
+   -o-transform: translateX(25px) translateY(-7px);
+}
+
+.inputBox input:valid,
+.inputBox input:focus{
+   border: 1px solid #00dfc4;
+}
+
+.inputBox i{
+   position: absolute;
+   font-size: 18px;
+   top: 11px;
+   left: 20px;
+   padding: 2px 0;
+   padding-right: 8px;
+   color: #00dfc4;
+   border-right: 1px solid #00dfc4;
+}
+
+.inputBox input[type="submit"]{
+   background: #00dfc4;
+   color: #223243;
+   padding: 10px 0;
+   font-weight: 800;
+   cursor: pointer;
+   box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35), inset -5px -5px 15px rgba(255, 255, 255, 0.1), inset 5px 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+.form p{
+   color: rgba(255, 255, 255, 0.582);
+   font-size: 15px;
+   font-weight: 400
+}
+
+.form p a{
+   font-weight: 400;
+   color: #fff;
+}
+
+/* Modal de Errores */
+.errores{
+   position: absolute;
+   bottom: 100px;
+   right: 15px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   width: 200px;
+   height: auto;
+}
+#modal{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background: rgba(34, 50, 67, 0.9);
+   border-radius: 10px;
+   height: auto;
+   width: 100%;
+   margin-top: 20px;
+}
+
+.msg-error{
+   color: #fff;
+   padding: 10px 15px;
+   margin: 10px;
+   font-size: 15px;
+}
+.close{
+   position: absolute;
+   right: -25px;
+   color: #fff;
+   width: 40px;
+   margin-right: 10px;
+   cursor: pointer;
+}

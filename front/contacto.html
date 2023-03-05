@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>FrontEnd Store</title>
+
+   <!------------------------------------------------------------------------>
+   <link rel="preload" href="css/normalize.css" as="style">
+   <link rel="stylesheet" href="css/normalize.css">
+   <!------------------------------------------------------------------------>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
+   <!------------------------------------------------------------------------>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <!------------------------------------------------------------------------>
+   <link rel="icon" type="image/favicon.ico" href="img/favicon.ico"/>
+   <!------------------------------------------------------------------------>
+   <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+   <header>
+      <a href="index.html">
+         <h1 class="titulo">FrontEnd Store</h1>
+      </a>
+   </header>
+   <nav>
+      <ul>
+         <li>
+            <i class="fa-solid fa-shop"></i>
+            <a class="nav_enlace" id="tienda" href="index.html">Tienda</a>
+         </li>
+         <li>
+            <i class="fa-solid fa-users"></i>
+            <a class="nav_enlace" id="nosotros" href="nosotros.html">Nosotros</a>
+         </li>
+         <li>
+            <i class="fa-solid fa-envelope"></i>
+            <a class="nav_enlace" id="contacto" href="contacto.html">Contacto</a>
+         </li>
+         <li>
+            <i class="fa-sharp fa-solid fa-right-from-bracket"></i>
+            <a class="nav_enlace" id="logout" href="#">Salir</a>
+         </li>
+      </ul>
+   </nav>
+   
+   <main class="contenedor m-top">
+      <form class="form-contacto" id="formContacto">
+         <fieldset>
+            <legend>Contactanos</legend>
+            
+            <div class="grid-form">
+               <div class="campo">
+                  <label for="nombre">Nombre</label>
+                  <input class="input-text" type="text" id="nombre" name="nombre" placeholder="Tú nombre" required>
+               </div>
+               
+               <div class="campo">
+                  <label for="apellido">Apellido</label>
+                  <input class="input-text" type="text" id="apellido" name="apellido" placeholder="Tú apellido" required>
+               </div>
+               
+               <div class="campo">
+                  <label for="email">Email</label>
+                  <input class="input-text" type="email" id="email" name="email" placeholder="Tú email" required>
+               </div>
+   
+               <div class="campo">
+                  <label for="message">Mensaje</label>
+                  <textarea class="input-text" id="message" name="mensaje" minlength="18" placeholder="Deja tu mensaje aqui" required></textarea>
+               </div>
+            </div>
+            <div class="alinear-derecha">
+               <input type="submit" class="boton" value="Enviar">
+            </div>
+         </fieldset>
+      </form>
+   </main>
+     
+  <footer>
+      <p class="footer_parrafo">Front End Store - Todos los derechos reservados, Alexander</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
