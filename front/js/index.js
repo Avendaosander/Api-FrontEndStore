@@ -27,9 +27,7 @@ document.addEventListener('DOMContentLoaded', async e => {
                         <figure>
                            <img class="producto_imagen" src=${franela.src} alt="Imagen camisa">
                            <figcaption class="producto_nombre">${franela.nombre}</figcaption>
-                           <div>
-                              <p class="producto_precio">$${franela.price}</p>
-                           </div>
+                           <p class="producto_precio">$${franela.price}</p>
                         </figure>
                      </a>
                   </article>`

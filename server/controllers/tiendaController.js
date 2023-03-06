@@ -30,23 +30,23 @@ const nosotros = (req, res) => {
 }
 
 const contactoForm = (req, res) => {
-   res.status(200).send({authLogin: true});
+   res.status(200).json({authLogin: true});
 }
 const crearContacto = async(req, res) => {
    const errors = validationResult(req)
    if(!errors.isEmpty()) {
       req.flash("mensajes", errors.array());
-      return res.status(404).send({"mensajes": req.flash('mensajes')})
+      return res.status(404).json({"mensajes": req.flash('mensajes')})
    }
    const { nombre, apellido, email, mensaje } = req.body;
    try {
       const contacto = new Contacto({nombre, apellido, email, mensaje});
       // console.log(contacto);
       await contacto.save();
-      res.status(200).send({enviado: true});
+      res.status(200).json({enviado: true});
    } catch (error) {
       req.flash("mensajes", errors.array());
-      res.status(404).send({"mensajes": req.flash('mensajes')})
+      res.status(404).json({"mensajes": req.flash('mensajes')})
    }
 }
 

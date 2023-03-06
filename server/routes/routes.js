@@ -11,6 +11,13 @@ router.post('/register',[
    body("nombre", "Ingrese un nombre")
       .trim()
       .notEmpty()
+      .custom( value => {
+         if (/^[A-Za-zñÑáéíóúÁÉÍÓÚüÜ\s]+$/g.test(value)) {
+            return true
+         } else {
+            throw new Error('El nombre no es valido, ingrese solo letras')
+         }
+      })
       .isLength({ min: 2 })
       .escape(),
    body("email", "Ingrese un email válido")
@@ -47,12 +54,24 @@ router.post('/contacto', [
    body("nombre", "Ingrese un nombre")
       .trim()
       .notEmpty()
-      .escape()
+      .escape().custom( value => {
+         if (/^[A-Za-zñÑáéíóúÁÉÍÓÚüÜ\s]+$/g.test(value)) {
+            return true
+         } else {
+            throw new Error('El nombre no es valido, ingrese solo letras')
+         }
+      })
       .isLength({ min: 2 }),
    body("apellido", "Ingrese un apellido")
       .trim()
       .notEmpty()
-      .escape()
+      .escape().custom( value => {
+         if (/^[A-Za-zñÑáéíóúÁÉÍÓÚüÜ\s]+$/g.test(value)) {
+            return true
+         } else {
+            throw new Error('El apellido no es valido, ingrese solo letras')
+         }
+      })
       .isLength({ min: 2 }),
    body("email", "Ingrese un email válido")
       .trim()
