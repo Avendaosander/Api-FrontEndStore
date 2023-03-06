@@ -2,8 +2,6 @@ const express = require('express');
 const { body } = require('express-validator')
 const { crearUser, loginUser, loginForm, registerForm, cerrarSesion } = require('../controllers/authController');
 const { traerFranelas, verFranela, crearContacto, contactoForm, nosotros } = require('../controllers/tiendaController');
-// const verificarUser = require('../middlewares/verificarUser');
-//Esta deberia ser la verificacion de las sesiones, ejemplo: router.get('/', verificarUser, traerFranelas)
 const router = express.Router()
 
 router.get('/', traerFranelas)

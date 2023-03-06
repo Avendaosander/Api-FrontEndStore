@@ -1,5 +1,7 @@
 const Users = require('../models/Users')
 const { validationResult } = require('express-validator');
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 const registerForm = (req, res) => {
    res.status(200).send('Registrate');
@@ -9,7 +11,7 @@ const crearUser = async (req, res, next) => {
    const errors = validationResult(req)
    if(!errors.isEmpty()) {
       req.flash("mensajes", errors.array());
-      return res.status(404).send({"mensajes": req.flash('mensajes')})
+      return res.status(404).json({"mensajes": req.flash('mensajes')})
    }
    const { nombre, email, password } = req.body;
    try {
@@ -20,15 +22,17 @@ const crearUser = async (req, res, next) => {
       user = new Users({nombre, email, password});
       // console.log(user);
       await user.save();
-      req.login(user, function(err){
-         if(err) throw new Error('Error al craer la sesion');
-         // console.log(req.user)
-         return res.status(200).send({verificado: true});
-      });
+
+      const token = jwt.sign({id: user._id}, process.env.SECRETTK, {
+         expiresIn: '5m'
+      })
+
+      return res.status(200).json({verificado: true, token});
+
    } catch (error) {
       // console.log(error.message);
       req.flash("mensajes", [{msg: error.message}]);
-      return res.status(404).send({"mensajes": req.flash('mensajes')})
+      return res.status(404).json({"mensajes": req.flash('mensajes')})
    }
 }
 
@@ -40,7 +44,7 @@ const loginUser = async(req, res) => {
    const errors = validationResult(req)
    if(!errors.isEmpty()) {
       req.flash("mensajes", errors.array());
-      return res.status(404).send({"mensajes": req.flash('mensajes')})
+      return res.status(404).json({"mensajes": req.flash('mensajes')})
    }
    const { email, password } = req.body;
    try {
@@ -50,24 +54,21 @@ const loginUser = async(req, res) => {
 
       if(!(await user.comparePassword(password))) throw new Error('La contraseña no es correcta');
       // Crea la sesion de usuario a traves de passport
-      req.login(user, function(err){
-         if(err) throw new Error('Error al crear la sesion');
-         // console.log(req.user)
-         // console.log(user);
-         return res.status(200).send({verificado: true});
-      });
+      
+      const token = jwt.sign({id: user._id}, process.env.SECRETTK, {
+         expiresIn: '5m'
+      })
+
+      return res.status(200).json({verificado: true, token});
    } catch (error) {
       req.flash("mensajes", [{msg: error.message}]);
-      return res.status(404).send({"mensajes": req.flash('mensajes')})
+      return res.status(404).json({"mensajes": req.flash('mensajes')})
    }
 }
 
 const cerrarSesion = (req, res, next) => {
    // console.log(req.user)
-   req.logout(function(err) {
-      if (err) { return next(err); }
-      return res.status(200).send({auth: false});
-   });
+   return res.status(200).send({auth: false});
 }
 
 module.exports = {

@@ -6,7 +6,7 @@ const traerFranelas = async(req, res) => {
    try {
       const franelas = await Franelas.find().lean();
       // console.log(franelas);
-      res.status(200).send(franelas);
+      res.status(200).json(franelas);
    } catch (error) {
       console.log(error);
       res.status(404).send('Fallo algo...');
@@ -18,7 +18,7 @@ const verFranela = async(req, res) => {
    try {
       const franela = await Franelas.findById(id).lean();
       // console.log(franela);
-      res.status(200).send(franela);
+      res.status(200).json(franela);
    } catch (error) {
       console.log(error);
       res.status(404).send('Fallo algo...');
@@ -26,7 +26,7 @@ const verFranela = async(req, res) => {
 }
 
 const nosotros = (req, res) => {
-   res.status(200).send({authLogin: true});
+   res.status(200).json({authLogin: true});
 }
 
 const contactoForm = (req, res) => {
